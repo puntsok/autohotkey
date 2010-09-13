@@ -164,7 +164,7 @@ return
 	{
 	}
 return
-^e::
+$^e::
 	; if interent explorer
 	If WinActive("ahk_class IEFrame")
 	{
@@ -176,15 +176,19 @@ return
 	}
 	else
 	{
+		Send ^e
 	}
 return
+$^y::
+	{
+		Send ^y
+	}
+return	
 #h::
 	; if interent explorer
 	If WinActive("Word")
 	{
 		Send {BS}
-	}
-	{
 	}
 $^k::
 	; if Outlook, mark as read
