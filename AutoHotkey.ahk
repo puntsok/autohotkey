@@ -34,7 +34,9 @@ return
 $^,::
 	if WinActive("Internet Explorer") or WinActive("Outlook") or WinActive("Firefox") or WinActive("Thunderbird") or WinActive("Mozilla Developer")
 	{
-		Send !to
+		Send !t
+		Sleep, 300
+		Send o
 	}
 	if WinActive("Meeting Maker")
 	{
