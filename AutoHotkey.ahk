@@ -50,6 +50,10 @@ $^,::
 	{
 		Send ^{F12}
 	}
+	if WinActive("Torrent")
+	{
+		Send ^p
+	}
 	else
 	{
 		Send ^,
@@ -71,7 +75,7 @@ $^1::
 	; if File Explorer
 	If WinActive("ahk_class CabinetWClass")
 	{
-		Send !vh ; View > Medium Icons
+		Send !vm ; View > Medium Icons
 	}
 	else
 	{
@@ -82,7 +86,7 @@ $^2::
 	; if File Explorer
 	If WinActive("ahk_class CabinetWClass")
 	{
-		Send !vd ; View > details
+		Send !vt ; View > details
 	}
 	else
 	{
@@ -100,15 +104,48 @@ $^3::
 		Send ^3
 	}
 return
+$^4::
+	; if File Explorer
+	If WinActive("ahk_class CabinetWClass")
+	{
+		Send !vd ; View > list
+	}
+	else
+	{
+		Send ^4
+	}
+return
 $^Up::
 	; if File Explorer
 	If WinActive("ahk_class CabinetWClass")
 	{
-		Send !vou ; up
+		Send !{Up}
 	}
 	else
 	{
 		Send ^{Up}
+	}
+return
+$^Left::
+	; if File Explorer
+	If WinActive("ahk_class CabinetWClass")
+	{
+		Send !{Left}
+	}
+	else
+	{
+		Send ^{Left}
+	}
+return
+$^Right::
+	; if File Explorer
+	If WinActive("ahk_class CabinetWClass")
+	{
+		Send !{Right}
+	}
+	else
+	{
+		Send ^{Right}
 	}
 return
 $^]::
@@ -267,15 +304,20 @@ return
 $^q::
 	Send !{F4}
 return
+
 !^s::
+	;; TOGGLE NAVIGATOR IN FILE EXPLORER
 	;; if win explorer
 	If WinActive("ahk_class CabinetWClass")
 	{
-		Send !veo
+		Send ^f{F6}
+		Sleep, 300
+		Send {Down}ln
 	}
 	else
 	{
 	}
+	
 return
 +^s::
 	;; save as
