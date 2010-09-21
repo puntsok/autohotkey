@@ -113,7 +113,7 @@ $^Up::
 return
 $^]::
 	; if File Explorer
-	If WinActive("ahk_class CabinetWClass")
+	If WinActive("Internet Explorer")
 	{
 		Send !{Right}
 	}
@@ -124,7 +124,7 @@ $^]::
 return
 $^[::
 	; if File Explorer
-	If WinActive("ahk_class CabinetWClass")
+	If WinActive("Internet Explorer")
 	{
 		Send !{Left}
 	}
