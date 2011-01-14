@@ -230,7 +230,7 @@ return
 		Send {BS}
 	}
 $^k::
-	; if Outlook, mark as read
+	; if Outlook, mark as read.
 	If WinActive("Outlook")
 	{
 		Send ^q
